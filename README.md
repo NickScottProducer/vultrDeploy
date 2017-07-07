@@ -6,7 +6,7 @@ https://my.vultr.com/settings/#settingsapi
 
 INSTRUCTIONS:
 
-Run the "startupScriptCreator(RUN THIS PROGRAM FIRST)" file first
+Run the "startupScriptCreator(RUN THIS PROGRAM FIRST).py" file first
 
 
 Then run the "vultrDeploy.py" file
