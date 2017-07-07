@@ -7,5 +7,9 @@ https://my.vultr.com/settings/#settingsapi
 INSTRUCTIONS:
 
 Run the "startupScriptCreator(RUN THIS PROGRAM FIRST)" file first
+
+
 Then run the "vultrDeploy.py" file
+
+
 ***Included a tool that removes the proxies as well! "vultrDestroy.py"***
