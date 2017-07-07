@@ -1,6 +1,6 @@
 Requires Python 3
 
-allocate your vultr API token in one step here:
+Allocate your vultr API token in one step here:
 
 https://my.vultr.com/settings/#settingsapi
 
