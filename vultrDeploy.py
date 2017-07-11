@@ -1,5 +1,4 @@
 import requests
-from bs4 import BeautifulSoup
 import time
 
 api_token = input('Enter your API token:')
@@ -57,7 +56,18 @@ def serverCreate():
     ]
     for i in range(int(numOfProxies)):
         r = requests.post(main_url + 'server/create', headers=headers, data=data)
-        print(r.content)     
+        print(r.content)
+        time.sleep(1)
+def writeToFile():
+    r = requests.get(main_url + 'server/list',headers=headers)
+    serverlist = []
+    json = r.json()
+    ip = tuple(str(d['main_ip']) for d in json.values())
+    lineBreak = '\n'.join('{}' + ':3128:dreamtm:1234asdf' for _ in range(len(ip))).format(*ip)
+    print('\n' + 'Your proxies are: ' + '\n' + '\n' + lineBreak + '\n' + '\n' + 'Also wrote a text file, located within the vultrDeploy folder')
+    file = open('vultr_proxies.txt','w')
+    file.write(lineBreak)
+    file.close()
 
 def serverDestroy():
     r = requests.get(main_url + 'server/list', headers=headers)
@@ -73,11 +83,17 @@ def serverDestroy():
         time.sleep(1)
 
 def main():
-    askMain = input('Do you want to create or destroy servers?')
-    if askMain == 'create':
-        serverCreate()
-    else:
+    askMain = input('Do you want to create/destroy proxies (enter "C" or "D") or write current proxies to text file(enter "W")?')
+    if askMain == 'C' or askMain == 'c':
+        serverCreate()        
+    elif askMain == 'D' or askMain== 'd':
         serverDestroy()
-                
+    elif askMain == 'W' or askMain =='w':
+        writeToFile()
+    else:
+        print('You entered your something incorrectly, please enter as specified.')
+        main()
+    
+        
 if __name__ == "__main__":
     main()
