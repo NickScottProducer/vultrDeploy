@@ -12,6 +12,3 @@ Run the "startupScriptCreator(RUN THIS PROGRAM FIRST).py" file first
 Then run the "vultrDeploy.py" file
 
 You only need to run startupScriptCreator once, unless ur washed
-
-
-***Included a tool that removes the proxies as well! "vultrDestroy.py"***
