@@ -58,6 +58,7 @@ def serverCreate():
         r = requests.post(main_url + 'server/create', headers=headers, data=data)
         print(r.content)
         time.sleep(1)
+        
 def writeToFile():
     r = requests.get(main_url + 'server/list',headers=headers)
     serverlist = []
@@ -93,7 +94,6 @@ def main():
     else:
         print('You entered your something incorrectly, please enter as specified.')
         main()
-    
         
 if __name__ == "__main__":
     main()
